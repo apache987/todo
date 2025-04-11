@@ -28,6 +28,14 @@
   grid-row-start: 2;
 }
 
+.textbox_content{
+  margin: 5px 10px;
+}
+
+.list {
+  list-style-type: none;
+}
+
 @media (max-width: 600px) {
   .page {
     padding: 32px;
