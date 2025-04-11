@@ -6,7 +6,6 @@ export default function Main() {
   const [inputText,setInputText] = useState("");
   const [todolist,setTodolist] = useState([]);
   const [editText,setEditText] = useState("");
-  //テキストをTodoに入れるのではなく、text,id,checkboxの要素を持ったオブジェクトをTodoの配列に格納するように変更する。
   
   const handleText = (e) => {
     setInputText(e.target.value);
