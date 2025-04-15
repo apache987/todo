@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 export default function Main() {
   const [inputText,setInputText] = useState("");
   const [todolist,setTodolist] = useState([]);
-  const [editText,setEditText] = useState("");
   
   const handleText = (e) => {
     setInputText(e.target.value);
@@ -22,15 +21,15 @@ export default function Main() {
     setInputText("");
   }
 
-  const handleEditText = (id,value) => {
-    const item = todolist.find(item => item.id === id);
-    setEditText(value);
-    item.text = value;
+  const handleEditText = (id, value) => {
+    setTodolist(todolist.map(todo => 
+      todo.id === id ? { ...todo, text: value } : todo
+    ));
   }
 
   const handleDelete = (id) => {
     const newTodolist = [...todolist];
-    const deletedTodolist = newTodolist.filter((item, index) => (item.id !== id));
+    const deletedTodolist = newTodolist.filter((item) => (item.id !== id));
     setTodolist(deletedTodolist);
   }
   return (
